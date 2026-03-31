@@ -216,6 +216,105 @@ footer {
     background: #333;
     transform: scale(1.05);
 }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+}
+/* ================= RESPONSIVE (Téléphone) ================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .portfolio-title {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    /* SECTION ABOUT (2 colonnes → 1 colonne) */
+    #about > div {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* GRID PROJETS */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    /* TEXT */
+    h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* CARDS */
+    .card {
+        border-radius: 15px;
+    }
+
+    .card-img {
+        height: 150px;
+        font-size: 0.8rem;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding: 50px 15px;
+    }
+}
 </style>
 </head>
 
@@ -245,26 +344,34 @@ footer {
             </div>
         </div>
 
-        <div>
-            <h2>Compétences & Langues</h2>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
-                    <b> Développement & Réseaux</b>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Java (OOP), PHP, SQL, Cisco Packet Tracer, </p>
-                </div>
-
-                <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
-                    <b> Outils & DB</b>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Oracle Database, MySQL, GitHub, VS Code</p>
-                </div>
-
-                <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
-                    <b> Langues</b>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Français (Courant), Arabe , Tamazigheth(Maternel), Anglais (Technique)</p>
-                </div>
-            </div>
+      <div>
+    <h2>Compétences & Langues</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+            <b> Développement & Réseaux</b>
+            <p style="font-size: 0.95rem; color: var(--text-dim);">
+                Bonne maîtrise des concepts de programmation orientée objet avec Java, développement web avec PHP et SQL, ainsi que des bases solides en réseaux informatiques .
+            </p>
         </div>
+
+        <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+            <b> Outils & Bases de données</b>
+            <p style="font-size: 0.95rem; color: var(--text-dim);">
+                Expérience dans la conception et la gestion de bases de données avec Oracle et MySQL, ainsi que l’utilisation d’outils de développement et de versioning .
+            </p>
+        </div>
+
+        <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+            <b> Langues</b>
+            <p style="font-size: 0.95rem; color: var(--text-dim);">
+                Maîtrise du français à l’oral et à l’écrit, arabe et tamazight comme langues maternelles, avec un niveau d’anglais technique adapté au domaine informatique.
+            </p>
+        </div>
+
+    </div>
+</div>
 
     </div>
 </section>
@@ -292,6 +399,27 @@ footer {
               
             </div>
         </div>
+    </div>
+</section>
+<section id="services">
+    <h2>Mes Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Développement Desktop</h3>
+            <p>Conception et réalisation d'applications de gestion robustes avec Java Swing et intégration de bases de données MySQL/Oracle.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Développement Web</h3>
+            <p>Création de plateformes dynamiques et réactives (Full-stack) utilisant PHP, MySQL et les technologies frontend modernes.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Architecture & BDD</h3>
+            <p>Modélisation de bases de données (MCD/MLD) et conception logicielle orientée objet pour des systèmes évolutifs.</p>
+        </div>
+
+        
     </div>
 </section>
 
